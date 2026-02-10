@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bodega Burger Stok</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Bodega Burger • Online Stok Takip</h1>
+
+    <section class="card">
+      <h2>Stok Girişi</h2>
+      <form id="stockInForm">
+        <input name="productName" placeholder="Ürün adı" required />
+        <input name="quantity" type="number" min="1" placeholder="Miktar" required />
+        <input name="unitPrice" type="number" min="0" step="0.01" placeholder="Birim fiyat" required />
+        <button type="submit">Ekle</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Fiş Metni ile Toplu Ekleme (AI)</h2>
+      <form id="receiptForm">
+        <textarea name="receiptText" rows="5" placeholder="Fiş satırlarını buraya yapıştırın"></textarea>
+        <button type="submit">Fişi Analiz Et ve Ekle</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Stok Özeti</h2>
+      <div id="summary"></div>
+      <table>
+        <thead>
+          <tr><th>Kategori</th><th>Ürün</th><th>Miktar</th><th>Birim Fiyat</th><th>Güncelleme</th></tr>
+        </thead>
+        <tbody id="stockTable"></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Son Hareketler</h2>
+      <ul id="movements"></ul>
+    </section>
+  </main>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
